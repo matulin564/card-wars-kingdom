@@ -1,0 +1,126 @@
+html {
+    font-family: 'Fira Code', Consolas, 'Courier New', monospace;
+}
+
+body {
+    margin: 0;
+    background-image: url("../img/fondo hora de aventura.jpg");
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.lasfotos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.contenedor-principal {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.criatura-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+#criaturaimagenes img.criatura {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    border: 2px solid #3333;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+#criaturaimagenes img.criatura:hover {
+    transform: scale(1.1);
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.4);
+}
+
+#description {
+    flex: 1;
+    padding: 15px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    background-color: #f0f8ff;
+    min-width: 250px;
+}
+
+#description img {
+    max-width: 300px;
+    border-radius: 10px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#description h3 {
+    margin-top: 0;
+}
+
+.tarjeta-criatura {
+    background-color: #8b4513;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+}
+
+.imagen-criatura {
+    max-width: 200px;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.nombre-criatura {
+    font-size: 22px;
+    color: #b8860b;
+    margin: 5px 0;
+}
+
+.detalle-criatura {
+    background-color: #ffdab9;
+    border: 2px solid #000;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: left;
+    color: #000;
+    font-size: 14px;
+}
+
+.detalle-criatura .habilidad {
+    color: #0000cd;
+    font-weight: bold;
+}
+
+.detalle-criatura .estadisticas span {
+    color: red;
+}
+
+.detalle-criatura .caracteristicas {
+    margin: 8px 0;
+    color: #444;
+    font-style: italic;
+}
+
+.detalle-criatura .extras {
+    margin-top: 10px;
+}
+
+.detalle-criatura .costo {
+    color: green;
+    font-weight: bold;
+}
+
+.detalle-criatura .recarga {
+    color: red;
+    font-weight: bold;
+}

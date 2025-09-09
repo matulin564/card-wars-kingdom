@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repertorio de cartas</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+<div class="lasfotos">
+    <h2>Almacenamiento de cartas</h2>
+
+    <div class="contenedor-principal">
+
+        <div class="criatura-panel">
+            <div id="criaturaimagenes">
+                <img id="arquerodan" src="assets/img/arquerodan.jpg" alt="Arquero dan" class="criatura" style="cursor: pointer;">
+                <img id="bolademaiz" src="assets/img/bolademaiz.webp" alt="bola de maiz" class="criatura" style="cursor: pointer;">
+                <img id="caballeroscorseles" src="assets/img/caballeroscorseles.webp" alt="caballeros corseles" class="criatura" style="cursor: pointer;">
+                <img id="gigantedescascarillado" src="assets/img/gigantedescascarillado.webp" alt="gigante descascarillado" class="criatura" style="cursor: pointer;">
+                <img id="gusanodescascarillador" src="assets/img/gusanodescascarillador.webp" alt="gusano descascarillador" class="criatura" style="cursor: pointer;">
+                <img id="murcielagodescascarillador" src="assets/img/murcielagodescascarillador.webp" alt="murcielago descascarillador" class="criatura" style="cursor: pointer;">
+                <img id="señordelmaiz" src="assets/img/señordelmaiz.webp" alt="señor del maiz" class="criatura">
+            </div>
+        </div>
+    
+        <div id="descripcion">
+            <h3>selecciona una carta para ver sus detalles</h3>
+        </div>
+    </div>
+</div>
+    
+<script>
+    const cartas = {
+        arquerodan: {
+            nombre: 'Arquero dan',
+            caracteristicas: 'Tiene el doble de ataque que defensa, pero tiene un efecto de apoyo y puede considerarse un cañón de cristal.',
+            estadisticas: '12 de ataque y 3 de defensa',
+            costo: '2 de energia magica'
+        },
+        bolademaiz: {
+            nombre: 'Bola de maiz',
+            caracteristicas: 'La Bola de Maíz es una de las cartas más útiles del mazo al principio de la partida.',
+            estadisticas: '2 de ataque y 5 de defensa',
+            costo: '1 de energia magica'
+        },
+        caballeroscorseles: {
+            nombre: 'Caballeros corceles',
+            caracteristicas: 'Es una carta que solo funciona si tienes otras criaturas fuertes activas y vivas para que su Floop surta efecto.',
+            estadisticas: '17 de ataque y 19 de defensa',
+            costo: '4 de energia magica'
+        },
+        gigantedescascarillado: {
+            nombre: 'Gigante descascarillado',
+            caracteristicas: 'Esta criatura es un atacante bastante voluminoso, sería súper fuerte si la usaras en un mazo de maíz.',
+            estadisticas: '15 de ataque y 30 de defensa',
+            costo: '5 de energia magica'
+        },
+        gusanodescascarillado: {
+            nombre: 'Gusano descascarillador',
+            caracteristicas: 'El gusano descascarillador tiene una buena relación ataque/defensa y su habilidad lo convierte en un buen tanque.',
+            estadisticas: '3 de ataque y 5 de defensa',
+            costo: '1 de energia magica'
+        },
+        murcielagodescascarillador: {
+            nombre: 'Murciélago descascarillador',
+            caracteristicas: 'Es una carta decente para usar como barrera, con estadísticas de defensa superiores a la media.',
+            estadisticas: '4 de ataque y 22 de defensa',
+            costo: '3 de energia magica'
+        },
+        señordelmaiz: {  <!-- corregido el nombre -->
+            nombre: 'Señor del maiz',
+            caracteristicas: 'Permite que cualquier criatura gane 6 puntos de ataque, increíble para mazos ofensivos de Corn Fields.',
+            estadisticas: '10 de ataque y 38 de defensa',
+            costo: '5 de energia magica'
+        }
+    };
+
+    document.querySelectorAll('#criaturaimagenes img').forEach(img => {
+        img.addEventListener('click', () => {
+            const criatura = cartas[img.id];
+            const description = document.getElementById('descripcion'); // corregido al español
+            description.innerHTML = `
+                <div class="tarjeta-criatura">
+                    <div class="imagen-criatura">
+                        <img src="${img.src}" alt="${img.alt}">
+                    </div>
+                    <h3 class="nombre-criatura">${criatura.nombre}</h3>
+                    <div class="detalle-criatura">
+                        <p class="caracteristicas">${criatura.caracteristicas}</p>
+                        <p class="estadisticas"><strong>Estadísticas:</strong> <span>${criatura.estadisticas}</span></p>
+                        <p class="extras"><strong>Costo:</strong> <span class="costo">${criatura.costo}</span></p>
+                    </div>
+                </div>
+            `;
+        });
+    });
+</script>
